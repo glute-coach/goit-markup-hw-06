@@ -56,7 +56,7 @@
             эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <a href="#" class="button">Заказать услугу</a>
+          <a href="#" class="button" data-open-modal>Заказать услугу</a>
         </div>
       </section>
       
@@ -416,5 +416,50 @@
         <p class="copy container">2020 | Developed by GoIT Students</p>
       
     </footer>
+
+    <div class="backdrop is-hidden" data-backdrop>
+      <div class="modal">
+        <form>
+          <label for="name">Имя</label>
+          <input type="text" name="user-name" id="name">
+  
+          <label for="tel">Телефон</label>
+          <input type="tel" name="tel" id="tel">
+  
+          <label for="mail">Почта</label>
+          <input type="email" name="mail" id="mail">
+  
+          <label for="comment">Комментарий</label>
+          <textarea name="comment" id="comment" rows="8"></textarea>
+  
+          <input type="checkbox" name="policy" id="policy">
+          <label for="policy">Соглашаюсь с рассылкой и принимаю условия договора</label>
+          
+          <button type="submit">Отправить</button>
+      </form>
+        <button class="button-close" data-close-modal>X</button>
+      </div>
+    </div>
+
+    <script>
+      const refs = {
+        openModalBtn: document.querySelector("[data-open-modal]"),
+        closeModalBtn: document.querySelector("[data-close-modal]"),
+        backdrop: document.querySelector("[data-backdrop]"),
+      };
+
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
+
+      refs.backdrop.addEventListener("click", logBackdropClick);
+
+      function toggleModal() {
+        refs.backdrop.classList.toggle("is-hidden");
+      }
+
+      function logBackdropClick() {
+        console.log("Это клик в бекдроп");
+      }
+    </script>
   </body>
 </html>
