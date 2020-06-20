@@ -609,7 +609,7 @@ footer {
 
 /* Портфолио */
 /* Button */
-button {
+.button-filter {
     transition: 250ms var(--timing-function);
 
     border: none;
@@ -646,8 +646,8 @@ button {
     width: 130px;
 }
 
-button:hover,
-button:focus {
+.button-filter:hover,
+.button-filter:focus {
     background-color: var(--accent-color);
     color: var(--primary-white-color);
 }
@@ -783,12 +783,25 @@ button:focus {
 
 .button-close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -10px;
+    right: -10px;
+
+    padding: 0;
 
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    border: none;
+    background-color: var(--primary-white-color);
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.close-icon {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+
+    fill: #000000;
     background-color: var(--primary-white-color);
 }
 
@@ -796,10 +809,8 @@ button:focus {
 
 .form {
     width: 448px;
-    outline: 1px solid tomato;
-    margin-left: auto;
-    margin-right: auto;
-
+    padding: 26px 45px 55px 35px;
+    box-sizing: content-box;
 }
 
 .form-title {
@@ -815,12 +826,14 @@ button:focus {
 }
 
 .form-field {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-bottom: 28px;
 }
 
 .form-field input {
+    padding-left: 42px;
     height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
@@ -838,6 +851,16 @@ button:focus {
 
 .form-text {
     margin-bottom: 20px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+}
+
+.form-text textarea {
+    padding: 12px 16px;
 }
 
 .form-text textarea {
@@ -847,6 +870,10 @@ button:focus {
 }
 
 .form-check {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
 }
 
@@ -855,3 +882,39 @@ button:focus {
     line-height: 1.71;
     letter-spacing: 0.03em;
 }
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    color: var(--accent-color);
+    transform: translate(-25px, -45px);
+}
+
+.form-label {
+    position: absolute;
+    top: 50%;
+    left: 42px;
+    transform: translateY(-50%);
+    transition: transform 250ms var(--timing-function);
+}
+
+.form-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+}
+
+.form-input:focus ~ .form-icon {
+    fill: var(--accent-color);
+}
+
+.form-input:focus {
+    border: 1px solid var(--accent-color);
+    outline: none;
+}
+
+textarea:focus {
+    border: 1px solid var(--accent-color);
+    outline: none;
+}
+

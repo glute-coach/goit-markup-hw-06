@@ -424,23 +424,32 @@
           <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
 
           <div class="form-field">
-            <label for="name">Имя</label>
-            <input type="text" name="user-name" id="name">
+            <input type="text" name="user-name" id="name" placeholder=" " autocomplete="off" class="form-input">
+            <label for="name" class="form-label">Имя</label>
+            <svg class="form-icon" width="12" height="12">
+              <use href="./images/sprite.svg#name"></use> 
+            </svg>
           </div>
   
           <div class="form-field">
-            <label for="tel">Телефон</label>
-            <input type="tel" name="tel" id="tel">
+            <input type="tel" name="tel" id="tel" placeholder=" " autocomplete="off" class="form-input">
+            <label for="tel" class="form-label">Телефон</label>
+            <svg class="form-icon" width="13" height="13">
+              <use href="./images/sprite.svg#phone-form"></use> 
+            </svg>
           </div>
   
           <div class="form-field">
-            <label for="mail">Почта</label>
-            <input type="email" name="mail" id="mail">
+            <input type="email" name="mail" id="mail" placeholder=" " autocomplete="off" class="form-input">
+            <label for="mail" class="form-label">Почта</label>
+            <svg class="form-icon" width="15" height="12">
+              <use href="./images/sprite.svg#mail-form"></use> 
+            </svg>
           </div>
   
           <div class="form-field form-text">
-            <label for="comment">Комментарий</label>
-            <textarea name="comment" id="comment" rows="8"></textarea>
+            <!-- <label for="comment">Комментарий</label> -->
+            <textarea name="comment" id="comment" rows="8" placeholder="Комментарий"></textarea>
           </div>
   
           <div class="form-field form-check">
@@ -449,8 +458,13 @@
           </div>
           
           <button type="submit">Отправить</button>
+            <button class="button-close" data-close-modal>
+              <!-- <span class="close-icon"></span> -->
+              <svg class="close-icon">
+                <use href="./images/sprite.svg#close"></use> 
+              </svg>
+            </button>
       </form>
-        <button class="button-close" data-close-modal>X</button>
       </div>
     </div>
 
