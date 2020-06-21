@@ -403,14 +403,19 @@
           </ul>
         </div>
 
-        <div class="subscribe">
-          <b class="subscribe-title">подписаться на рассылку</b>
+        <form class="subscribe">
+          <!-- <b class="subscribe-title">подпишитесь на рассылку</b> -->
+          <div class="subscribe-field">
+            <input class="subscribe-input" type="email" name="mail" id="mail" placeholder="E-mail" autocomplete="off">
+            <label class="subscribe-title" for="mail">подпишитесь на рассылку</label>
+          
           <a href="#" class="footer-button"> Подписаться
             <svg class="icon-send" width="24" height="24">
               <use href="./images/sprite.svg#icon-send"></use> 
             </svg>
           </a>
         </div>
+        </form>
       </div>
       
         <p class="copy container">2020 | Developed by GoIT Students</p>
@@ -451,13 +456,14 @@
             <!-- <label for="comment">Комментарий</label> -->
             <textarea name="comment" id="comment" rows="8" placeholder="Комментарий"></textarea>
           </div>
-  
-          <div class="form-field form-check">
-            <input type="checkbox" name="policy" id="policy">
-            <label for="policy">Соглашаюсь с рассылкой и принимаю условия договора</label>
-          </div>
           
-          <button type="submit">Отправить</button>
+          <label class="form-check" for="policy">
+            <input class="input-check" type="checkbox" name="policy" id="policy">
+            <span class="icon-check"></span>
+            Соглашаюсь с рассылкой и принимаю условия договора
+          </label>
+        
+          <button class="button-submit" type="submit">Отправить</button>
             <button class="button-close" data-close-modal>
               <!-- <span class="close-icon"></span> -->
               <svg class="close-icon">
